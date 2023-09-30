@@ -87,5 +87,17 @@ namespace Arrays_and_Strings.Exercises
 
             return true;
         }
+
+        /*
+         * Another way that uses an extra data structure is to use sets and compare the length of the data structures.
+         */
+
+        public static bool IsUniqueWithSets(string input)
+        {
+            // Check if the string has a length greater than the possible number of unique chars in the alphabet
+            if (input.Length > 128) return false;
+
+            return input.ToHashSet<char>().Count == input.Length;
+        }
     }
 }
