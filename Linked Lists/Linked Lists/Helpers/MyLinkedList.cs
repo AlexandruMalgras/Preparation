@@ -27,6 +27,20 @@
             this.Count++;
         }
 
+        public void AppendToFront(MyNode<T> newNode)
+        {
+            if (this.Head == null)
+            {
+                this.InitializeLinkedList(newNode.Value);
+                return;
+            }
+
+            this.Tail.Next = newNode;
+            newNode.Previous = this.Tail;
+            this.Tail = newNode;
+            this.Count++;
+        }
+
         private void InitializeLinkedList(T value)
         {
             this.Head = new MyNode<T>(value);
