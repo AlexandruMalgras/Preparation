@@ -4,6 +4,12 @@
     {
         public MyNode<T> Head { get; set; }
         public MyNode<T> Tail { get; set; }
+        public int Count { get; private set; }
+
+        public MyLinkedList() 
+        {
+            this.Count = 0;
+        }
 
         public void AppendToFront(T value)
         {
@@ -18,12 +24,14 @@
             this.Tail.Next = newNode;
             newNode.Previous = this.Tail;
             this.Tail = newNode;
+            this.Count++;
         }
 
         private void InitializeLinkedList(T value)
         {
             this.Head = new MyNode<T>(value);
             this.Tail = this.Head;
+            this.Count++;
         }
 
         public void RemoveNode(MyNode<T> node)
@@ -38,6 +46,7 @@
             {
                 this.Head = null;
                 this.Tail = null;
+                this.Count--;
                 return;
             }
 
@@ -45,6 +54,7 @@
             {
                 this.Head = node.Next;
                 this.Head.Previous = null;
+                this.Count--;
                 return;
             }
 
@@ -52,11 +62,13 @@
             {
                 this.Tail = node.Previous;
                 this.Tail.Next = null;
+                this.Count--;
                 return;
             }
 
             node.Previous.Next = node.Next;
             node.Next.Previous = node.Previous;
+            this.Count--;
         }
 
         public bool CheckIfNodeExists(MyNode<T> node)
