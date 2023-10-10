@@ -11,7 +11,7 @@
             this.Count = 0;
         }
 
-        public void AppendToFront(T value)
+        public void AppendToEnd(T value)
         {
             if (this.Head == null)
             {
@@ -27,11 +27,11 @@
             this.Count++;
         }
 
-        public void AppendToFront(MyNode<T> newNode)
+        public void AppendToEnd(MyNode<T> newNode)
         {
             if (this.Head == null)
             {
-                this.InitializeLinkedList(newNode.Value);
+                this.InitializeLinkedList(newNode);
                 return;
             }
 
@@ -41,9 +41,32 @@
             this.Count++;
         }
 
+        public void AppendToStart(T value)
+        {
+            if (this.Head == null)
+            {
+                this.InitializeLinkedList(value);
+                return;
+            }
+
+            MyNode<T> newNode = new MyNode<T>(value);
+
+            this.Head.Previous = newNode;
+            newNode.Next = this.Head;
+            this.Head = newNode;
+            this.Count++;
+        }
+
         private void InitializeLinkedList(T value)
         {
             this.Head = new MyNode<T>(value);
+            this.Tail = this.Head;
+            this.Count++;
+        }
+
+        private void InitializeLinkedList(MyNode<T> newNode)
+        {
+            this.Head = newNode;
             this.Tail = this.Head;
             this.Count++;
         }

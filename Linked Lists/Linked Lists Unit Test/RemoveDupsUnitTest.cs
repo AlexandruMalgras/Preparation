@@ -41,7 +41,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < arr.Length; i++)
             {
-                linkedList.AppendToFront(arr[i]);
+                linkedList.AppendToEnd(arr[i]);
             }
 
             RemoveDups.RemoveDupsWithHashSet(linkedList);
@@ -67,7 +67,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < arr.Length; i++)
             {
-                linkedList.AppendToFront(arr[i]);
+                linkedList.AppendToEnd(arr[i]);
             }
 
             RemoveDups.RemoveDupsWithNestedLoops(linkedList);

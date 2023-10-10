@@ -58,7 +58,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < arr.Length; i++)
             {
-                linkedList.AppendToFront(arr[i]);
+                linkedList.AppendToEnd(arr[i]);
             }
 
             int result = ReturnKthToLast.ReturnKthToLastWithRunner(linkedList, k);
@@ -74,7 +74,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < arr.Length; i++)
             {
-                linkedList.AppendToFront(arr[i]);
+                linkedList.AppendToEnd(arr[i]);
             }
 
             int result = ReturnKthToLast.ReturnKthToLastWithCount(linkedList, k);
@@ -90,7 +90,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < arr.Length; i++)
             {
-                linkedList.AppendToFront(arr[i]);
+                linkedList.AppendToEnd(arr[i]);
             }
 
             int result = ReturnKthToLast.ReturnKthToLastWithPrevious(linkedList, k);

@@ -25,11 +25,11 @@ namespace Linked_Lists.Exercises
             {
                 if (node.Value < comparer)
                 {
-                    left.AppendToFront(node);
+                    left.AppendToEnd(node);
                 }
                 else
                 {
-                    right.AppendToFront(node);
+                    right.AppendToEnd(node);
                 }
 
                 node = node.Next;

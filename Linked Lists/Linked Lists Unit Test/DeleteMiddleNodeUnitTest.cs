@@ -44,7 +44,7 @@ namespace Linked_Lists_Unit_Test
 
             for (int i = 0; i < nodes.Length; i++)
             {
-                linkedList.AppendToFront(nodes[i]);
+                linkedList.AppendToEnd(nodes[i]);
             }
 
             MyNode<int> node = linkedList.Head;
