@@ -19,6 +19,7 @@ namespace Arrays_and_Strings.Exercises
             // Check if the string has a length greater than the possible number of unique chars in the alphabet
             if (input.Length > 128) return false;
 
+            // Check for each character in the string if there is a duplicate ahead of it.
             for (int i = 0; i < input.Length - 1; i++)
             {
                 for (int j = i + 1; j < input.Length; j++)
@@ -77,6 +78,7 @@ namespace Arrays_and_Strings.Exercises
 
             for (int i = 0; i < input.Length; i++)
             {
+                // Check if the character already exists.
                 if (switches[input[i]])
                 {
                     return false;

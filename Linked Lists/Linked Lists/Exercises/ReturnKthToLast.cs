@@ -18,12 +18,13 @@ namespace Linked_Lists.Exercises
             MyNode<int> slow = linkedList.Head;
             MyNode<int> fast = linkedList.Head;
 
-            // Move the fast node k nodes ahead
+            // Change the fast node k nodes ahead
             for (int i = 0; i < k; i++)
             {
                 fast = fast.Next;
             }
 
+            // Change both nodes at the same speed until the fast one is null
             while (fast != null)
             {
                 slow = slow.Next;
@@ -44,6 +45,7 @@ namespace Linked_Lists.Exercises
 
             int depth = linkedList.Count - k;
 
+            // Change depth times from the start of the linked list
             for (int i = 0; i < depth; i++)
             {
                 node = node.Next;
@@ -61,6 +63,7 @@ namespace Linked_Lists.Exercises
 
             MyNode<int> node = linkedList.Tail;
 
+            // Change k - 2 times from the end of the linked list
             for (int i = 1; i < k; i++)
             {
                 node = node.Previous;

@@ -15,14 +15,17 @@ namespace Linked_Lists.Exercises
          */
         public static void RemoveDupsWithHashSet(MyLinkedList<int> list)
         {
+            // Stop if the list is empty
             if (list.Head == null) return;
 
             HashSet<int> set = new HashSet<int>();
 
             MyNode<int> node = list.Head;
 
+            // Insert the values into the set
             while (node != null)
             {
+                // If the value already exists remove the node
                 if (set.TryGetValue(node.Value, out int value))
                 {
                     list.RemoveNode(node);
@@ -44,6 +47,7 @@ namespace Linked_Lists.Exercises
         {
             MyNode<int> primary = list.Head;
 
+            // For every node check all the node values ahead 
             while (primary != null)
             {
                 MyNode<int> secondary = primary.Next;

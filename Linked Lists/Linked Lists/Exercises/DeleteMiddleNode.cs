@@ -14,7 +14,8 @@ namespace Linked_Lists.Exercises
          */
         public static void DeleteMiddleNodeByCount(MyLinkedList<int> linkedList, MyNode<int> node)
         {
-            if (node.Equals(linkedList.Head) || node.Equals(linkedList.Tail) || linkedList.Count == 0) return;
+            // Check wether the node is not the head or the tail of the linked list.
+            if (node.Equals(linkedList.Head) || node.Equals(linkedList.Tail)) return;
 
             linkedList.RemoveNode(node);
         }

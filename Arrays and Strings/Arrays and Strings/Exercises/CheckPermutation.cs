@@ -19,9 +19,11 @@ namespace Arrays_and_Strings.Exercises
             char[] firstToArray = first.ToCharArray();
             char[] secondToArray = second.ToCharArray();
 
+            // Sort the strings
             QuickSort.QuickSortCharacters(firstToArray, 0, firstToArray.Length - 1);
             QuickSort.QuickSortCharacters(secondToArray, 0, secondToArray.Length - 1);
 
+            // Compare if the strings are the same
             return new string(firstToArray) == new string(secondToArray);
         }
 
@@ -50,7 +52,7 @@ namespace Arrays_and_Strings.Exercises
 
             for (int i = 0; i < second.Length; i++)
             {
-                // Check if the key exist and decrement it, otherwise the strings are not permutable.
+                // Check if the key exist and decrement it.
                 if (dictionary.TryGetValue(second[i], out int value))
                 {
                     value--;

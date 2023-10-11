@@ -62,6 +62,7 @@ namespace Arrays_and_Strings.Exercises
 
             char[] characters = input.ToCharArray();
 
+            // Sort the string
             QuickSort.QuickSortCharacters(characters, 0, characters.Length - 1);
 
             int indexToStart = 0;
@@ -82,6 +83,7 @@ namespace Arrays_and_Strings.Exercises
             int countNonPairs = 0;
             int i = indexToStart;
 
+            // Loop through the string to find non pairs.
             for (; i < characters.Length - 1; i++)
             {
                 if (countNonPairs > 1) return false;

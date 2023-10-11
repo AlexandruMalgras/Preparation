@@ -23,18 +23,23 @@ namespace Linked_Lists.Exercises
         {
             MyLinkedList<int> temporary = new MyLinkedList<int>();
 
+            // FInd the longer number
             MyNode<int> first = firstNumber.Count >= secondNumber.Count ? firstNumber.Head : secondNumber.Head;
             MyNode<int> second = firstNumber.Count < secondNumber.Count ? firstNumber.Head : secondNumber.Head;
 
             int calculation = 0;
             int remainder = 0;
             List<int> result = new List<int>();
+
+            // Node used instead of padding
             MyNode<int> emptyNode = new MyNode<int>(0);
+
 
             while (first != null)
             {
                 calculation = first.Value + second.Value + remainder;
 
+                // Add the calculation to the list based on the result.
                 if (calculation < 10)
                 {
                     result.Add(calculation);
@@ -46,12 +51,15 @@ namespace Linked_Lists.Exercises
                     remainder = 1;
                 }
 
+                // Change the nodes forward
                 first = first.Next;
                 second = second.Next != null ? second.Next : emptyNode;
             }
 
+            // Check if the last calculation resulted with a remainder (Ex. 999 + 2 = 1001)
             if (remainder == 1) result.Add(remainder);
 
+            // Append the result to the linked list
             for (int i = result.Count - 1; i >= 0; i--)
             {
                 temporary.AppendToEnd(result[i]);
@@ -70,8 +78,10 @@ namespace Linked_Lists.Exercises
          */
         public static MyLinkedList<int> SumListsForward(MyLinkedList<int> firstNumber, MyLinkedList<int> secondNumber)
         {
-             int depth = Math.Abs(firstNumber.Count - secondNumber.Count);
+            // Depth used for padding
+            int depth = Math.Abs(firstNumber.Count - secondNumber.Count);
 
+            // Add depth 0s to the shorter linked list
             LeftPadLinkedList(firstNumber.Count >= secondNumber.Count ? secondNumber : firstNumber, depth, 0);
 
             MyNode<int> first = firstNumber.Head;
@@ -80,6 +90,7 @@ namespace Linked_Lists.Exercises
             MyLinkedList<int> newFirstNumber = new MyLinkedList<int>();
             MyLinkedList<int> newSecondNumber = new MyLinkedList<int>();
 
+            // Reverse the linked list
             for (int i = 0; i < firstNumber.Count; i++)
             {
                 newFirstNumber.AppendToStart(first.Value);
@@ -90,6 +101,7 @@ namespace Linked_Lists.Exercises
                 second = second.Next;
             }
 
+            // Return the result of the reverse calculation
             return SumListsReverse(newFirstNumber, newSecondNumber);
         }
 

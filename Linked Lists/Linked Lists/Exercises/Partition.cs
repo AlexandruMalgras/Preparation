@@ -21,6 +21,7 @@ namespace Linked_Lists.Exercises
 
             MyNode<int> node = linkedList.Head;
 
+            // Append the nodes to the newly created lists
             while (node != null)
             {
                 if (node.Value < comparer)

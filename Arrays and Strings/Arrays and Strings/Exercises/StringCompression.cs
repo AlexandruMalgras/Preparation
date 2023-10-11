@@ -23,6 +23,7 @@ namespace Arrays_and_Strings.Exercises
             char current = input[0];
             int count = 1;
 
+            // Loop through the string keeping count of characters and their occurance.
             for (int i = 1; i < input.Length; i++)
             {
                 if (input[i] == current)
@@ -39,10 +40,7 @@ namespace Arrays_and_Strings.Exercises
                 }
             }
 
-            /* 
-             * Update the last iteration of the algorithm as there is no next character to check at the end.
-             * It also appends the character and the count when the input length is 1.
-             */
+            // Append the last occurance of the string.
             output.Append(current);
             output.Append(count);
 

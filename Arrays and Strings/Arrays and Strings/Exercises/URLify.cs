@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Arrays_and_Strings.Exercises
 {
     /*
-     * Write a method to replace all space in a string with '%20'. You may assume that the string has sufficient
+     * Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient
      * space at the end to hold the additional characters, and that you are given the true length of the string.
      */
     public class URLify
@@ -20,8 +20,10 @@ namespace Arrays_and_Strings.Exercises
             // Check if the array is empty
             if (input.Length == 0) return;
 
+            // Index to fill the empty allocated spaces in the string.
             int indexToPlace = input.Length - 1;
 
+            // Start reading characters from the end of the string, keeping track of their new index to be placed at.
             for (int i = input.Length - 1; i >= 0; i--)
             {
                 if (input[i] == '\0') continue;

@@ -13,9 +13,10 @@
          */
         public static bool OneWayWithCheck(string a, string b)
         {
-            // Check the length.
+            // Check if the length is higher or equal than 2.
             if (Math.Abs(a.Length - b.Length) > 1) return false;
 
+            // Execute the equality algorithm if the strings are equal.
             if (a.Length == b.Length)
             {
                 if (!EqualityCheck(a, b)) return false;
@@ -23,6 +24,7 @@
                 return true;
             }
 
+            // Execute the nonequality algorithm if the strings are not equal.
             if (!NonEqualityCheck(a, b)) return false;
 
             return true;
@@ -32,6 +34,7 @@
         {
             int countChanges = 0;
 
+            // Check the occurance of different characters at the same index in the strings.
             for (int i = 0; i < a.Length; i++)
             {
                 if (a[i] != b[i]) countChanges++;
@@ -44,27 +47,17 @@
 
         private static bool NonEqualityCheck(string a, string b)
         {
+            // Establish which of the string is longer.
             string longest = a.Length > b.Length ? a : b;
             string shortest = a.Length > b.Length ? b : a;
 
-            int modifier = 0;
-
-            int countChanges = 0;
-
-            for (int i = 0; i < longest.Length; i++)
+            for (int i = 0; i < shortest.Length; i++)
             {
-                if (modifier == 0 && i == longest.Length - 1)
+                // Since the strings already need 1 edit because of the nonequality, we stop at the first replacement needed.
+                if (longest[i] != shortest[i])
                 {
-                    modifier++;
+                    return false;
                 }
-
-                if (longest[i] != shortest[i - modifier])
-                {
-                    countChanges++;
-                    modifier++;
-                }
-
-                if (countChanges > 1) return false;
             }
 
             return true;

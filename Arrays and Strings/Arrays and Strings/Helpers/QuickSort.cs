@@ -17,23 +17,29 @@ namespace Arrays_and_Strings.Helpers
             int leftIndex = lowIndex;
             int rightIndex = highIndex;
 
+            // Start moving from both ends of the array
             while (leftIndex < rightIndex)
             {
+                // On the left look for elements higher than the pivot
                 while (input[leftIndex] <= pivot && leftIndex < rightIndex)
                 {
                     leftIndex++;
                 }
 
+                // On the right look for elements lower than the pivot
                 while (input[rightIndex] >= pivot && rightIndex > leftIndex)
                 {
                     rightIndex--;
                 }
 
+                // Swap the higher to the right and lower to the left
                 Swap(input, leftIndex, rightIndex);
             }
 
+            // Swap the pivot
             Swap(input, leftIndex, highIndex);
 
+            // Recurse till the array is sorted
             QuickSortCharacters(input, lowIndex, leftIndex - 1);
             QuickSortCharacters(input, leftIndex + 1, highIndex);
         }
