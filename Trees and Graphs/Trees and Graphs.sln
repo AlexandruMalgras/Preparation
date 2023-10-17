@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees and Graphs", "Trees and Graphs\Trees and Graphs.csproj", "{BA8E81FC-8828-4AC4-9549-941EDBF5C967}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trees and Graphs Unit Test", "Trees and Graphs Unit Test\Trees and Graphs Unit Test.csproj", "{06C0B3FE-A611-4FF0-A895-08C88CEC879A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA8E81FC-8828-4AC4-9549-941EDBF5C967}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA8E81FC-8828-4AC4-9549-941EDBF5C967}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA8E81FC-8828-4AC4-9549-941EDBF5C967}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA8E81FC-8828-4AC4-9549-941EDBF5C967}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06C0B3FE-A611-4FF0-A895-08C88CEC879A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06C0B3FE-A611-4FF0-A895-08C88CEC879A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06C0B3FE-A611-4FF0-A895-08C88CEC879A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06C0B3FE-A611-4FF0-A895-08C88CEC879A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {98EC2EDA-FB2C-4499-BE09-DF09E13087EC}
+	EndGlobalSection
+EndGlobal
